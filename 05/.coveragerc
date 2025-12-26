@@ -1,0 +1,4 @@
+[run]
+omit =
+    homework_warehouse_management/domain/repositories.py
+    homework_warehouse_management/domain/unit_of_work.py
