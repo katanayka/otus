@@ -1,0 +1,7 @@
+services:
+  typing:
+    build: .
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: ["tasks"]

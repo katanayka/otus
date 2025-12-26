@@ -1,0 +1,27 @@
+name: typing-02
+
+on:
+  push:
+    paths:
+      - "02/**"
+      - ".github/workflows/typing-02.yml"
+  pull_request:
+    paths:
+      - "02/**"
+      - ".github/workflows/typing-02.yml"
+
+jobs:
+  mypy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "02"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Mypy
+        run: mypy tasks
