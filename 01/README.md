@@ -10,7 +10,7 @@ Nginx access log analyzer that builds an HTML report with per-URL stats.
 - Skips report generation if it already exists.
 
 ## Requirements
-- Python 3.11+
+- Python 3.13+
 - Poetry
 
 ## Install

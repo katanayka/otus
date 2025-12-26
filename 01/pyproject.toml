@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{ include = "log_analyzer", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.13"
 structlog = "^24.1.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -23,19 +23,19 @@ log-analyzer = "log_analyzer.cli:main"
 
 [tool.black]
 line-length = 88
-target-version = ["py311"]
+target-version = ["py313"]
 
 [tool.isort]
 profile = "black"
 line_length = 88
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.13"
 warn_unused_ignores = true
 warn_return_any = true
 no_implicit_optional = true
 
 [tool.ruff]
 line-length = 88
-target-version = "py311"
+target-version = "py313"
 select = ["E", "F", "I", "W"]

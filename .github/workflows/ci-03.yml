@@ -1,0 +1,29 @@
+name: ci-03
+
+on:
+  push:
+    paths:
+      - "03/**"
+      - ".github/workflows/ci-03.yml"
+  pull_request:
+    paths:
+      - "03/**"
+      - ".github/workflows/ci-03.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "03"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install ruff
+        run: python -m pip install ruff
+      - name: Lint
+        run: ruff check homework
+      - name: Tests
+        run: python homework/test.py
