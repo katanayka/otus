@@ -23,6 +23,10 @@ jobs:
           python-version: "3.12"
       - name: Run http-test-suite
         run: |
+          if [ ! -f tests/http-test-suite/httptest.py ]; then
+            rm -rf tests/http-test-suite
+            git clone --depth 1 https://github.com/s-stupnikov/http-test-suite tests/http-test-suite
+          fi
           sudo python homework/httpd.py -r homework -p 80 &
           SERVER_PID=$!
           sleep 1

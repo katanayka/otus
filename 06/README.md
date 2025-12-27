@@ -33,6 +33,10 @@ curl http://localhost:8080/httptest/wikipedia_russia.html
 
 ## Run tests (http-test-suite)
 The suite expects port 80 by default.
+If `tests/http-test-suite` is missing, clone it first:
+```bash
+git clone https://github.com/s-stupnikov/http-test-suite 06/tests/http-test-suite
+```
 
 Option A: bind to port 80 (may require admin/sudo):
 ```bash
