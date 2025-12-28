@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException
 
@@ -12,10 +13,17 @@ from app.schemas import (
     PredictResponse,
     TokenResponse,
 )
-from app.services.auth import authenticate_user, create_access_token, require_roles
+from app.services.auth import (
+    User,
+    authenticate_user,
+    create_access_token,
+    require_roles,
+)
 from app.services.model import IrisRuleModel, load_model
 
 app = FastAPI(title="ML Model Serving API", version="1.0.0")
+require_user_or_admin = require_roles("user", "admin")
+require_admin = require_roles("admin")
 
 
 @app.on_event("startup")
@@ -55,7 +63,7 @@ def login(payload: LoginRequest) -> TokenResponse:
 @app.post("/predict", response_model=PredictResponse)
 def predict(
     payload: PredictRequest,
-    _user=Depends(require_roles("user", "admin")),
+    _user: Annotated[User, Depends(require_user_or_admin)],
 ) -> PredictResponse:
     model = _get_model()
     try:
@@ -72,7 +80,7 @@ def predict(
 
 @app.post("/admin/reload")
 def reload_model(
-    _user=Depends(require_roles("admin")),
+    _user: Annotated[User, Depends(require_admin)],
 ) -> dict[str, str]:
     settings = get_settings()
     model = load_model(settings.model_path)

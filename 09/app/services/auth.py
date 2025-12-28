@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Callable
+from typing import Annotated, Callable
 
 import jwt
 from fastapi import Depends, HTTPException, status
@@ -63,7 +63,7 @@ security = HTTPBearer()
 
 
 def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(security),
+    credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)],
 ) -> User:
     settings = get_settings()
     return decode_access_token(credentials.credentials, settings)
@@ -72,7 +72,7 @@ def get_current_user(
 def require_roles(*roles: str) -> Callable[[User], User]:
     allowed = set(roles)
 
-    def _checker(user: User = Depends(get_current_user)) -> User:
+    def _checker(user: Annotated[User, Depends(get_current_user)]) -> User:
         if user.role not in allowed:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
