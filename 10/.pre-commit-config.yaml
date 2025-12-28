@@ -1,4 +1,4 @@
-exclude: ^homework/.*\.ipynb$|^homework/\.ipynb_checkpoints/|^homework/data/
+exclude: ^homework/.*\.ipynb$|^homework/\.ipynb_checkpoints/|^homework/data/|^homework/\._|^homework/.+/\._
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks

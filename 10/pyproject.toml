@@ -5,6 +5,8 @@ exclude = [
     "homework/homework.ipynb",
     "homework/.ipynb_checkpoints",
     "homework/data",
+    "homework/._*",
+    "**/._*",
 ]
 
 [tool.ruff.lint]

@@ -7,8 +7,7 @@ class LogisticRegression:
         self.w = None
         self.loss_history = None
 
-    def train(self, X, y, learning_rate=1e-3, reg=1e-5, num_iters=100,
-              batch_size=200, verbose=False):
+    def train(self, X, y, learning_rate=1e-3, reg=1e-5, num_iters=100, batch_size=200, verbose=False):
         """
         Train this classifier using stochastic gradient descent.
 
@@ -69,7 +68,7 @@ class LogisticRegression:
             #########################################################################
 
             if verbose and it % 100 == 0:
-                print('iteration %d / %d: loss %f' % (it, num_iters, loss))
+                print("iteration %d / %d: loss %f" % (it, num_iters, loss))
 
         return self
 
@@ -147,10 +146,7 @@ class LogisticRegression:
         scores = np.clip(scores, -500, 500)
         prob_class_1 = 1.0 / (1.0 + np.exp(-scores))
         eps = 1e-12
-        loss = -np.mean(
-            y_batch * np.log(prob_class_1 + eps)
-            + (1 - y_batch) * np.log(1 - prob_class_1 + eps)
-        )
+        loss = -np.mean(y_batch * np.log(prob_class_1 + eps) + (1 - y_batch) * np.log(1 - prob_class_1 + eps))
         dscores = prob_class_1 - y_batch
         dw = X_batch.T.dot(dscores) / num_train
         dw = np.asarray(dw).reshape(-1)
