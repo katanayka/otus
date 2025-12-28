@@ -17,7 +17,7 @@ class IrisRuleModel:
             raise ValueError(
                 f"Expected {len(self.feature_names)} features, got {len(features)}."
             )
-        values = dict(zip(self.feature_names, features))
+        values = dict(zip(self.feature_names, features, strict=False))
         petal_length = values["petal_length"]
         petal_width = values["petal_width"]
 
