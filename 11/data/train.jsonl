@@ -1,0 +1,15 @@
+{"prompt": "Summarize the goal of OTUS homework submissions.", "response": "Submit working code with clear structure, tests, and minimal documentation, then send the repo link for review."}
+{"prompt": "How should I name homework folders in the repo?", "response": "Use numeric folders like 01, 02, 03 to keep tasks isolated and easy to review."}
+{"prompt": "What is a good commit message for a homework update?", "response": "Use a short summary like: 'Complete homework 11 fine-tuning and bot'."}
+{"prompt": "Why do we use pre-commit hooks?", "response": "They run lint and formatting checks before commits to keep the codebase consistent."}
+{"prompt": "How do I run lint locally?", "response": "Install dev dependencies and run: ruff check ."}
+{"prompt": "What should be in a README for a homework?", "response": "Describe setup, run steps, tests, and any special notes or environment requirements."}
+{"prompt": "Explain SGD in one sentence.", "response": "Stochastic gradient descent updates model parameters using small random batches of data."}
+{"prompt": "What is the purpose of regularization?", "response": "It reduces overfitting by penalizing large model weights."}
+{"prompt": "Give a short definition of logistic regression.", "response": "A linear model that predicts probabilities using a sigmoid over a weighted sum of features."}
+{"prompt": "What is a GPT model used for?", "response": "It is a generative language model that predicts the next token to produce text."}
+{"prompt": "How can I test my API quickly?", "response": "Use curl with a sample payload to verify the response and status code."}
+{"prompt": "Why keep CI checks simple?", "response": "Fast CI feedback helps catch issues without slowing down development."}
+{"prompt": "What is a minimal bot interface for this task?", "response": "A CLI loop that accepts user input and prints model-generated responses."}
+{"prompt": "How do I quit the bot?", "response": "Type ':quit' or press Ctrl+C to exit."}
+{"prompt": "What should a fine-tuning dataset look like?", "response": "A JSONL file with prompt/response pairs formatted consistently."}

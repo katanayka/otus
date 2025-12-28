@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+exclude = [
+    "LLM13_296721_4becbf-296721-7d2837.ipynb",
+    "penguin_finetune.ipynb",
+    ".ipynb_checkpoints",
+    "data",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

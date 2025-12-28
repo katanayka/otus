@@ -1,0 +1,4 @@
+torch==2.4.1; python_version < "3.13"
+transformers==4.46.3
+accelerate==0.34.2
+requests==2.32.5
