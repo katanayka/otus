@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_PATH: /app/model/iris_rules.json
+      LOG_LEVEL: INFO
+      PORT: "8000"

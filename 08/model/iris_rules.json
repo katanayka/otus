@@ -1,0 +1,20 @@
+{
+  "version": "v1",
+  "feature_names": [
+    "sepal_length",
+    "sepal_width",
+    "petal_length",
+    "petal_width"
+  ],
+  "class_names": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "thresholds": {
+    "petal_length_setosa": 2.45,
+    "petal_width_split": 1.75,
+    "petal_length_mid": 4.95,
+    "petal_length_high": 4.85
+  }
+}
