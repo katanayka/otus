@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+exclude = [
+    "homework/homework.ipynb",
+    "homework/.ipynb_checkpoints",
+    "homework/data",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]

@@ -1,0 +1,27 @@
+name: ci-10
+
+on:
+  push:
+    paths:
+      - "10/**"
+      - ".github/workflows/ci-10.yml"
+  pull_request:
+    paths:
+      - "10/**"
+      - ".github/workflows/ci-10.yml"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "10"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install lint dependencies
+        run: python -m pip install -r dev_requirements.txt
+      - name: Lint
+        run: ruff check .
