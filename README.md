@@ -15,6 +15,7 @@ Each task lives in its own folder and has its own instructions.
 - `09` — FastAPI ML model serving with JWT auth
 - `10` - Logistic regression (SGD, Amazon reviews)
 - `11` - OTUS-GPT (fine-tuned GPT bot)
+- `12` - Memcache loader (concurrent)
 
 ## How to run
 See the README inside each folder (for example, `01/README.md` or `06/homework/README.md`).
